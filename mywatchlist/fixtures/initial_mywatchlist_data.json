@@ -1,0 +1,112 @@
+[
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":1,
+        "fields":{
+            "title":"Mencuri Raden Saleh",
+            "release_date":"25/07/2022",
+            "watched": "Yes",
+            "rating": "5",
+            "review": "Exceeds my expectation! The story telling (which I consider usually lacking in most Indonesian films) is very good even with the twists and turns. Very good pacing that makes 2,5 hours gone in a flash."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":2,
+        "fields":{
+            "title":"Avengers: Endgame",
+            "release_date":"24/04/2019",
+            "watched": "Yes",
+            "rating": "5",
+            "review": "This film is an emotional rollercoaster with some of the coolest superhero plot lines ever drawn up. It's straight up the most epic Marvel film that will probably ever be created. I don't see how Marvel could ever top this, but getting to see these characters all together at least one last time was a reward all on its own."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":3,
+        "fields":{
+            "title":"Avengers: Infinity War",
+            "release_date":"25/04/2018",
+            "watched": "Yes",
+            "rating": "5",
+            "review": "Avengers infinity war is an emotional roller coaster. Using the strength of its powerful and interesting villain, the movie successfully brings together the past 10 years of Marvel movies into a largely effective cocktail of super-heroic dramatics. Joe and Anthony Russo create a superhero movie that it's every bit the epic that it needs to be. However prepared you feel, you are not ready for Thanos. Infinity war is stunning, hilarious and heartbreaking."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":4,
+        "fields":{
+            "title":"Doctor Strange in the Multiverse of Madness",
+            "release_date":"24/04/2019",
+            "watched": "Yes",
+            "rating": "2",
+            "review": "Is it me or is this the most baffling marvel film there is? Is there a plot or a story? It just seemed to be nonsense. A film should make sense whether you are a big fan or a novice. I like Marvel but I'm a casual viewer. I don't want to watch a film where it's like, you need to watch film 23 and episode 9 of season 1 to understand the plot. Loved the first film too. This is literally madness."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":5,
+        "fields":{
+            "title":"Nanti Kita Cerita Tentang Hari Ini",
+            "release_date":"02/01/2020",
+            "watched": "Yes",
+            "rating": "4",
+            "review": "I love this movie. I love the story I love the song. the story about this movie is so simple it's simple but great. the story is from a simple thing in our lives, but you guys make this so great. Suitable to watch with family."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":6,
+        "fields":{
+            "title":"Dilan 1990",
+            "release_date":"25/01/2018",
+            "watched": "Yes",
+            "rating": "4",
+            "review": "This movie is the most iconic romcom of my generation in Indonesia, as many people from all ages know it and people love to quote Dilan's famous pick-up lines in daily life. In my opinion as a teenager, this movie is cute and funny, but very cheesy and predictable."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":7,
+        "fields":{
+            "title":"Frozen",
+            "release_date":"29/11/2013",
+            "watched": "Yes",
+            "rating": "5",
+            "review": "I always feel like Disney makes better & better movies, as time passes. This movie is so great, so original but also classic. Love it!"
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":8,
+        "fields":{
+            "title":"A Cinderella Story",
+            "release_date":"16/07/2004",
+            "watched": "Yes",
+            "rating": "4",
+            "review": "A Cinderella story is one of those movies that is perfect in its absolute predictability. It doesn't need to be anything more than it is. Don't go in expecting a cinematic masterpiece, its a cliche teen movie. Hilary Duff is perfect, and CMM is gorgeous. Love to watch this and throw myself back into my childhood."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":9,
+        "fields":{
+            "title":"Sayap-Sayap Patah",
+            "release_date":"24/04/2019",
+            "watched": "No",
+            "rating": "5",
+            "review": "-"
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":10,
+        "fields":{
+            "title":"Clueless",
+            "release_date":"19/07/1995",
+            "watched": "No",
+            "rating": "5",
+            "review": "-"
+        }
+    }
+]
