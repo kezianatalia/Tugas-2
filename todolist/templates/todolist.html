@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    h1, h3, p, th, td, table {text-align: center;}
+    table, th, td {
+        padding: 15px;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    button {
+        background-color: white;
+        border-color: rgb(250, 112, 112);
+        border-radius: 5px;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        display: inline-block;
+        font-size: 15px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: rgb(250, 112, 112);
+        color: white;
+    }
+</style>
+
+<h1 style="font-family:candara">☆ To do list ☆</h1>
+
+<h3 style="font-family:candara">Username : {{user.username}} </h3>
+
+<center>
+<button><a href="{% url 'todolist:create_task' %}">Add New Task</a></button>
+<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+<br/>
+<br>
+
+<table>
+  <tr style="background-color: rgb(255, 239, 188); font-family:poppins;">
+      <th>Tanggal Pembuatan</th>
+      <th>Judul</th>
+      <th>Deskripsi</th>
+      <th>Status</th>
+      <th colspan="2">Ubah</th>
+  </tr>
+  {% for todo in list_todo %} 
+  <tr style="background-color: aliceblue;">
+    <td>{{todo.date}}</td>
+    <td>{{todo.title}}</td>
+    <td>{{todo.description}}</td>
+    <td>{% if todo.finished %}
+        Finished 
+        {% else %} 
+        Not Finished 
+        {% endif %}
+    </td>
+    <td>
+        <button><a href="{% url 'todolist:change_status' todo.id %}">Change Status</a></button>
+    </td>
+    <td>
+        <button><a href="{% url 'todolist:delete' todo.id %}">Delete</a></button>
+    </td>
+  </tr>
+  {% endfor %}
+  
+</table>
+</center>
+
+{% endblock content %}

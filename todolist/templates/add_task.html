@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Add Task</title>
+{% endblock meta %}
+
+{% block content %}
+<style>
+    table, button {text-align: center;}
+    table, th, td {
+        padding: 5px;
+    }
+    
+</style>
+
+<center>
+<div class = "add">
+    <h1 style="font-family:candara">☆ Add Task ☆</h1>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Todo: </td>
+                <td><input type="text" name="title" placeholder="Todo" class="form-control"></td>
+            </tr>
+                    
+            <tr>
+                <td>Description: </td>
+                <td><input type="text" name="description" placeholder="Description" class="form-control"></td>
+            </tr>
+        </table>
+        <td><input class="submit" type="submit" value="Add"></td>
+        <td><input type="button" value="Kembali" onclick="history.back()"></td>
+    </form>
+</center>
+</div>
+
+{% endblock content %}
