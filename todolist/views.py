@@ -13,7 +13,7 @@ from django.urls import reverse
 # TODO: Create your views here.
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    data_todolist = Task.objects.all()
+    data_todolist = Task.objects.all().order_by('date')
     context = {
         'list_todo' : data_todolist,
     }
