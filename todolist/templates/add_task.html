@@ -1,8 +1,71 @@
-{% extends 'base.html' %}
+<!doctype html>
+<html>
 
-{% block meta %}
-<title>Add Task</title>
-{% endblock meta %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Add Task</title>
+</head>
+
+<style>
+    @media screen and (max-width: 700px) {
+      .column {
+        width: 100%;
+      }
+    }
+</style>
+
+<body>
+    <div class="w-screen h-screen flex justify-center items-center
+    bg-gradient-to-br from-indigo-800 via purple-500 to-rose-400" class="add">
+        <form method="POST" class="p-10 bg-white rounded-xl drop-shadow-lg space-y-5" action="">
+            {% csrf_token %}
+            <h1 class="text-center text-3xl font-bold">Add your new task</h1>
+            <div class="flex flex-col space-y-2">
+                <label class="text-sm font-light" for="todo">Task</label>
+                <input class="form-control w-96 px-3 py-2 rounded-md border border-slate-400" type="text" placeholder="New Task"
+                    name="title">
+            </div>
+            <div class="flex flex-col space-y-2">
+                <label class="text-sm font-light" for="description">Description</label>
+                <textarea
+                    class="
+                        form-control
+                        block
+                        w-full
+                        px-3
+                        py-2
+                        text-base
+                        rounded-md
+                        border
+                        border-slate-400
+                        transition
+                        ease-in-out
+                        m-0"
+                    name="description"
+                    rows="5"
+                    placeholder="Description"
+                    ></textarea>
+               
+            </div>
+
+            <div class="inline-block">
+                <button class="margin-right:5px px-12 py-2 bg-blue-600 text-white rounded-md
+                hover:bg-blue-500 hover:drop-shadow-md duration-300 ease-in" type="submit" class="submit" value="Add">
+                    Add
+                </button>
+                <button class="margin-right:5px px-12 py-2 bg-blue-600 text-white rounded-md
+                hover:bg-blue-500 hover:drop-shadow-md duration-300 ease-in" type="button" value="Back" onclick="history.back()">
+                    Back
+                </button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
 
 {% block content %}
 <style>

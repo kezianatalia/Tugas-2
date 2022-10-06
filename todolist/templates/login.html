@@ -1,47 +1,47 @@
-{% extends 'base.html' %}
+<!doctype html>
+<html>
 
-{% block meta %}
-<title>Login</title>
-{% endblock meta %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login Page</title>
+</head>
+<style>
+    @media screen and (max-width: 700px) {
+      .column {
+        width: 100%;
+      }
+    }
+</style>
 
-{% block content %}
+<body>
+    <div class="w-screen h-screen flex justify-center items-center
+    bg-gradient-to-br from-indigo-800 via purple-500 to-rose-400" class="login">
+        <form method="POST" class="p-10 bg-white rounded-xl drop-shadow-lg space-y-5" action="">
+            {% csrf_token %}
+            <h1 class="text-center text-3xl font-bold">Login</h1>
+            <div class="flex flex-col space-y-2">
+                <label class="text-sm font-light" for="username">Username</label>
+                <input class="w-96 px-3 py-2 rounded-md border border-slate-400" type="username" placeholder="Your Username"
+                    name="username" id="username">
+            </div>
+            <div class="flex flex-col space-y-2">
+                <label class="text-sm font-light" for="password">Password</label>
+                <input class="w-96 px-3 py-2 rounded-md border border-slate-400" type="password"
+                    placeholder="Your Password" name="password" id="password">
+            </div>
 
-<center>
-<div class = "login">
+            <button class="w-full px-10 py-2 bg-blue-600 text-white rounded-md
+            hover:bg-blue-500 hover:drop-shadow-md duration-300 ease-in" type="submit" value="Login">
+                Login
+            </button>
 
-    <h1 style="font-family:candara">☆ Login ☆</h1>
+            <p class="text-center"><label class="text-sm font-light">Don't have an account?</label>
+            <a class="text-blue-600 text-sm font-light hover:underline"
+                    href="{% url 'todolist:register' %}">Create account</a></p>
+        </form>
+    </div>
+</body>
 
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
-
-</div>
-</center>
-
-{% endblock content %}
+</html>

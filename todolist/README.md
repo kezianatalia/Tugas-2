@@ -1,5 +1,6 @@
 Link aplikasi : https://tugas2-kezia.herokuapp.com/todolist 
 
+# Tugas 4: Pengimplementasian Form dan Autentikasi Menggunakan Django
 ## Apa kegunaan {% csrf_token %} pada elemen <form>? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
 crsf atau cross site request forgery adalah salah satu serangan siber pada website yang menyebabkan website mengeksekusi perintah yang seharusnya tidak diizinkan, namun output yang dihasilkan tetap sesuai dengan seharusnya. Salah satu cara untuk mencegah hal ini adalah dengan csrf token. csrf token merupakan sebuah random string yang di-generate setiap kali halaman form muncul. csrf token membuat penyerang tidak mungkin melakukan permintaan http yang sepenuhnya valid karena penyerang tidak dapat memprediksi nilai token csrf pengguna. 
 Jika tidak ada potongan kode csrf token, maka website bisa saja diserang dan diakses oleh orang lain tanpa kita sadari.
@@ -37,3 +38,46 @@ Melakukan push ke GitHub. Saya telah menyambungkan aplikasi heroku dengan akun G
 
 9. Membuat dua akun pengguna dan tiga dummy data menggunakan model Task pada akun masing-masing di situs web Heroku.
 Setelah aplikasi ter-deploy, jalankan aplikasi dengan akun dan data sesuai keinginan kita.
+
+# Tugas 5: Web Design Using HTML, CSS, and CSS Framework
+##  Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
+- Inline CSS 
+Inline CSS adalah kode CSS yang ditulis langsung pada atribut elemen HTML. Tiap elemennya memiliki atribut style, dan disitulah inline CSS dimasukkan. Kelebihannya yaitu dapat membantu ketika ingin menguji dan melihat perubahan satu elemen dan memparbarui kode dengan cepat. Kelebihan lainnya yaitu proses request HTTP membuat loading lebih cepat karena lebih kecil. Kekurangannya yaitu tidak efisien karena hanya bisa diterapkan dalam satu elemen HTML.
+- Internal CSS
+Internal CSS adalah kode CSS yang ditulis di dalam tag <style> dan kode HTML yang ditulis di header file HTML. Kelebihan internal CSS adalah class dan ID nya bisa digunakan oleh internal stylesheet, perubahannya hanya berlaku di satu halaman, dan tidak perlu mengupload banyak file karena HTML dan CSS berada di satu file. Kekurangannya yaitu kurang efisien jika ingin menggunakan CSS yang sama di beberapa file dan dapat membuat performa website lambat karena website akan selalu meload ulang ketika ganti halaman. 
+- External CSS
+External CSS adalah kode CSS yang ditulis terpisah dengan HTML. Terdapat file khusus untuk menulis external CSS, yaitu file dengan ekstensi .css. File ini biasanya diletakkan di header halaman HTML. Kelebihannya yaitu lebih mudah dan sederhana untuk menambahkan kode CSS di tiap elemen HTML, ukuran halaman lebih kecil dan rapi, dan loading website lebih cepat. Kekurangannya yaitu jika file CSS gagal dipanggil oleh HTML, tampilan website akan berantakan.
+
+## Jelaskan tag HTML5 yang kamu ketahui.
+- <!doctype html> : mendeklarasikan sebuah dokumen agar menjadi file HTML
+- <html> : tag pembuka dokumen HTML
+- <head> : menampung informasi meta dari dokumen
+- <title> : membuat judul halaman yang akan ditampilkan di web
+- <p> : membuat paragraf
+- <br> : membuat baris baru
+- <style> : atribut untuk elemen styling pada HTML
+- <form> : membuat formulir untuk mengumpulan input
+- <input> : membuat tipe inputran form
+- <label> : memberikan label pada input
+- <button> : membuat button
+- <table> : membuat tabel
+- <tr> : membuat baris pada tabel
+- <td> : membuat kolom pada tabel
+- <option> : mendefinisikan opsi-opsi
+- <select> : membuat input dengan pilihan berbentuk list dropdown
+
+## Jelaskan tipe-tipe CSS selector yang kamu ketahui.
+- Selektor Tag : selektor yang memilih berdasarkan tag.
+- Selektor Class : selektor yang memilih elemen berdasarkan nama class yang diberikan
+- Selektor ID : selektor ID mirip dengan selektor class namun ID nya bersifat unik. 
+- Selektor atribut : selektor yang memilih elemen berdasarkan atribut, selektor ini mirip dengan selektor ID.
+- Selektor universal : selektor untuk menyeleksi semua elemen pada suatu scope (jangkauan)
+- Pseudo selektor : selektor untuk memilih elemen semu seperti state di elemen, elemen before dan after, dsb.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+- Kustomisasi template untuk halaman login, register, dan create-task semenarik mungkin.
+Menghubungkan tailwind dengan file HTML dengan memasukkan url di head html, kemudian lakukan kustomisasi sesuai keinginan
+- Kustomisasi halaman utama todo list menggunakan cards. (Satu card mengandung satu task).
+Mengubah file HTML yang tadinya menampilkan todo dengan tabel menjadi menggunakan cards
+- Membuat keempat halaman yang dikustomisasi menjadi responsive.
+Menambahkan kode pada tag style agar website menjadi responsif
