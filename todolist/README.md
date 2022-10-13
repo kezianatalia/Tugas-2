@@ -81,3 +81,27 @@ Menghubungkan tailwind dengan file HTML dengan memasukkan url di head html, kemu
 Mengubah file HTML yang tadinya menampilkan todo dengan tabel menjadi menggunakan cards
 - Membuat keempat halaman yang dikustomisasi menjadi responsive.
 Menambahkan kode pada tag style agar website menjadi responsif
+
+# Tugas 6 : Javascript dan AJAX
+##  Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+Asynchronous programming adalah komunikasi web yang sifatnya parsial sehingga bisa berjalan secara serentak. User tetap bisa berinteraksi dengan web ketika loading data, website tidak perlu refresh secara keseluruhan karena yang me-load data hanya partial page.
+Sedangkan Synchronous programming adalah komunikasi web yang memerlukan refresh seluruh page ketika terdapat permintaan dari user. User tidak bisa berinteraksi dengan website selama waktu menunggu server merespons permintaan.
+
+## Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma Event-Driven Programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+Event Driven Programming adalah paradigma pemrograman yang flow-nya berjalan sesuai dengan event yang dilakukan oleh user. Contohnya adalah ketika user mengklik mouse, menekan tombol sesuatu di keyboard, dan lain-lain. Setiap event di-handle oleh function untuk menjalankan sesuatu. Contoh penerapannya pada tugas ini yaitu ketika user mengklik tombol add, yang akan diterima oleh function add_todolist sehingga terciptalah suatu todo di web.
+
+## Jelaskan penerapan asynchronous programming pada AJAX.
+Penerapannya pada tugas ini yaitu ketika user melakukan event add task, dilakukan AJAX POST sehingga user tidak perlu merefresh web untuk mendapatkan perubahan terbaru.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+AJAX GET
+- Membuat fungsi show_json pada views.py yang digunakan untuk mengembalikan data dalam bentuk JSON
+- Melakukan routing fungsi show_json dengan menambahkan path di urls.py
+- lakukan pengambilan task dengan AJAX GET pada todolist.hthml
+
+AJAX POST
+- Membuat fungsi add_todo pada views.py untuk menambahkan task
+- Melakukan routing fungsi add_todo dengan menambahkan path di urls.py
+- Membuat button add new task yang dipetakan ke pemunculan modal jika button diklik
+- Hubungkan form yang terdapat di dalam modal ke path todolist/add
+- Tutup modal ketika user mengklik add, lalu akan terjadi asynchronous programming yaitu data task yang diinput pengguna langsung muncul di layar tanpa harus merefresh web.

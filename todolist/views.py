@@ -1,3 +1,4 @@
+from http.client import HTTPResponse
 from django.shortcuts import render
 from todolist.models import Task
 from django.shortcuts import redirect
@@ -9,6 +10,10 @@ from django.contrib.auth.decorators import login_required
 import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+from django.core import serializers
+from django.http import HttpResponse
 
 # TODO: Create your views here.
 @login_required(login_url='/todolist/login/')
@@ -75,3 +80,24 @@ def delete(request, pk):
     task = Task.objects.get(id=pk)
     task.delete()
     return HttpResponseRedirect(reverse('todolist:show_todolist'))
+
+@login_required(login_url='/todolist/login/')
+def show_json(request):
+    data_todolist = Task.objects.filter(user=request.user)
+    return HTTPResponse(serializers.serialize('json', data_todolist), content_type='application/json')
+
+@csrf_exempt
+def add_todo(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        date = datetime.datetime.now()
+        date_format = date.strftime("%d %b, %Y, %X")
+        finished = False
+        todo = Task.objects.create(date=date_format, title=title, description=description,finished=finished, user=request.user)
+        return JsonResponse({'pk':todo.pk,
+                'fields':{
+                'title':todo.title,
+                'date':todo.date,
+                'description':todo.description,
+            }})
